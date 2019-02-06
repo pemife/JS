@@ -1,0 +1,50 @@
+<html>
+    <head></head>
+    <body>
+      <a href="javascript:parar(tiempo)">Parar reloj</a>
+      <a href="javascript:iniciar(tiempo)">Iniciar reloj</a>
+        <script type="text/javascript">
+            function hora(){
+                var fecha = new Date;
+                var h = fecha.getHours();
+                if(h<10){
+                        h = "0"+h;
+                }
+                var m = fecha.getMinutes();
+                if(m<10){
+                        m = "0"+m;
+                }
+                var s = fecha.getSeconds();
+                if(s<10){
+                        s = "0"+s;
+                }
+                document.title = h+":"+m+":"+s;
+            }
+            function iniciar(t){
+              var tiempo = setInterval(hora, 1000);
+            }
+            function parar(t){
+              clearInterval(t);
+            }
+            var tiempo = setInterval(hora, 1000);
+
+            /*setInterval(function(){     // Para cuando recibe parametros
+                var fecha = new Date;
+                var h = fecha.getHours();
+                if(h<10){
+                        h = "0"+h;
+                }
+                var m = fecha.getMinutes();
+                if(m<10){
+                        m = "0"+m;
+                }
+                var s = fecha.getSeconds();
+                if(s<10){
+                        s = "0"+s;
+                }
+                document.title = "Hora actual "+h+":"+m+":"+s;
+            }, 1000);
+            */
+        </script>
+    </body>
+</html>

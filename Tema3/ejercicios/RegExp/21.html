@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 21</title>
+</head>
+<body>
+	<script type="text/javascript">
+		dia = prompt("Introduzca un dia de la semana seguido del numero del mes (Lunes 1):");
+		patronDia = /(Lunes|Martes|Miercoles|Jueves|Viernes|Sabado|Domingo) ((0[1-9]|[1-2]\d)|3(0|1))/i;
+		while(!patronDia.test(dia)){
+			dia = prompt("Introduzca Valido! (Lunes 01)");
+		}
+	</script>
+</body>
+</html>

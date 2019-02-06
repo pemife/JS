@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 6</title>
+  </head>
+  <body>
+    <form>
+      <input type="text" name="texto1">
+      <input type="button" name="boton1" value="Buscar" onclick="buscarEnArray()">
+      <br><br>
+    </form>
+    <script type="text/javascript">
+      var impares = [];
+      for ( i = 0; i <= 21; i++){
+        if((i%2)!=0)
+        impares.push(i);
+      }
+      document.write(impares + "</br></br>");
+
+      var sumatorio = 0;
+      for (var i=0; i<impares.length; i++){
+        sumatorio += impares[i];
+      }
+      document.write("La suma de todos los impares del 1 al 21 es: " + sumatorio + "</br></br>");
+
+      document.write(impares.reverse() + " <- Ahora esta dado la vuelta</br></br>");
+
+      function buscarEnArray(){
+        var queBuscar = document.getElementsByName('texto1')[0].value;
+        var posicion = impares.indexOf(Number(queBuscar));
+        if(posicion!=-1){
+          alert(`El numero ${queBuscar} se encuentra en la posicion ${posicion}`);
+          delete impares[posicion];
+          alert(impares);
+        }else {
+          alert(`El numero ${queBuscar} no se ha encontrado!`);
+        }
+      }
+
+      document.write("Ordenado de forma ascendente: " + impares.sort(function(a,b){return a-b;}) + "</br></br>");
+      document.write("Ordenado de forma descendente: " + impares.sort(function(a,b){return b-a;}) + "</br></br>");
+    </script>
+  </body>
+</html>

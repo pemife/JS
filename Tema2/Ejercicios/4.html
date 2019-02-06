@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ejericicio 4</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+        var number1 = Number(prompt("Introduzca un numero"));
+        var number2 = Number(prompt("Introduzca otro numero"));
+
+        document.write("Estos son los multiplos de 8 entre los numeros seleccionados:");
+
+        // Corregido
+        for( i = ;Math.min(number1, number2); i <= Math.max(number1, number2) ; i++){
+            if(i%8 == 0){
+                document.write("<br>" + i);
+            }
+        }
+
+        /* 
+        if(number1 < number2){
+            for(i=number1; i<=number2 ; i++){
+                if(i%8 == 0){
+                    document.write("<br>" + i);
+                }
+            }
+        }else{
+            for(i=number2; i<=number1 ; i++){
+                if(i%8 == 0){
+                    document.write("<br>" + i);
+                }
+            }
+        }
+        */
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio2</title>
+  </head>
+  <body>
+    <a href="" id="enlace">Enlace Aleatorio</a>
+    <script type="text/javascript">
+      var x = Math.floor(Math.random()*3);
+
+      switch(x){
+        case 0:
+          document.getElementById("enlace").href = "http://www.hotmail.com";
+          break;
+        case 1:
+          document.getElementById("enlace").href = "http://www.gmail.com";
+          break;
+        case 2:
+          document.getElementById("enlace").innerHTML = '<a href="http://www.yahoo.com">Enlace Aleatorio</a>';
+          break;
+        default:
+          //nunca llegara aqui
+          alert("mentira");
+          break;
+      }
+    </script>
+  </body>
+</html>

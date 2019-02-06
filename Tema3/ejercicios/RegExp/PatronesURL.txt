@@ -1,0 +1,39 @@
+Indica si son correctos o no los siguientes patrones. En el caso de no ser correctos, corrígelos para que lo sean.
+
+Se consideran válidas las siguientes urls:
+ http://www.google.es
+ https://url.com
+
+1- var patron1= new RegExp(/[http,https{1}]:\/\/[www?]\.[.*]\.[.*]/,i);
+2- var patron = /^http[s]?\:\/\/\d+\.\d.\d+$/
+3- var patt = /^(http\:\/\/)([w]{3})?[\.]?\w*[\.]\w*$/;
+4- var patron = /^http\:\/\/(.+)?\..+\..+$/;
+5- var patron = /http[s]?\:\/\/[w]*\.?[a-z]+\.[es]?[com]?/;
+6- var patron =/^(http:\/\/ | https:\/\/)[A-Za-z]* \.(com|es)$/;
+7- var regurl = new RegExp("^((https|http)://www\.[a-z]+\.[a-z]+)$");
+8- var patron = /^(http|https)\:\/\/(www\.)?[a-z0-9]+\.[a-z]$/;
+10- var reg = /^http(s)?\:\/\/w{3}\.[a-z0-9]+\.(es|com)$/;
+11- var patUrl = /^(http|https):\/\/(w{3}\.|)[a-zA-Z0-9]+\.[a-z]{3}$/;
+12- var pat = /^(http|https)\:\/\/(www\.)?[a-zA-Z]*\.(es|com)$/;
+
+
+1- var patron1= new RegExp(/[http,https{1}]:\/\/[www?]\.[.*]\.[.*]/,i);
+	var patron1 = new RegExp("(http|https):\\/\\/(www\\.)?[A-Za-z0-9]+\\.[A-Za-z0-9]+$","i");
+
+2- var patron = /^http[s]?\:\/\/\d+\.\d.\d+$/
+	var patron = /^http[s]?:\/\/(w{3}\.)?\w+\.\w+$/;
+
+3- var patt = /^(http\:\/\/)([w]{3})?[\.]?\w*[\.]\w*$/;
+	var patt = /^http[s]?:\/\/([w]{3}\.)?\w+\.\w+$/;
+
+4- var patron = /^http\:\/\/(.+)?\..+\..+$/;
+	var patron = /^http[s]?:\/\/(w{3}\.)?\w+\.\w+$/;
+
+5- var patron = /http[s]?\:\/\/[w]*\.?[a-z]+\.[es]?[com]?/;
+	var patron = /http[s]?:\/\/([w]{3}.)?[A-Za-z0-9]+\.(es|com)/;
+
+6- var patron =/^(http:\/\/ | https:\/\/)[A-Za-z]* \.(com|es)$/;
+	var patron = /^(http:\/\/|https:\/\/)(www.)?[A-Za-z0-9]+\.(com|es)$;
+
+7- var regurl = new RegExp("^((https|http)://www\.[a-z]+\.[a-z]+)$");
+	var regul = new RegExp("^(https|http):\/\/(www.)?\w+\.\w+$");

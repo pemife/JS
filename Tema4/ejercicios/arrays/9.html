@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <table border="2">
+      <tbody id="cuerpotabla">
+        <tr>
+          <th>Alumno</th>
+          <th>DWEC</th>
+          <th>DIWEB</th>
+          <th>DAWEB</th>
+        </tr>
+      </tbody>
+    </table>
+    <script type="text/javascript">
+      //[[nombre, nota1, nota2, nota3], [nombre, nota1, nota2, nota3]...]
+      var alumnos = new Array(5);
+      alumnos = crearAlumnos();
+      dibujarTabla(alumnos);
+
+      function dibujarTabla(alumnos){
+        for (var i = 0; i < alumnos.length; i++) {
+          cuerpotabla.innerHTML += `
+          <tr>
+            <td>${alumnos[i][0]}</td>
+            <td>${alumnos[i][1]}</td>
+            <td>${alumnos[i][2]}</td>
+            <td>${alumnos[i][3]}</td>
+          </tr>
+          `;
+        }
+      }
+
+      function crearAlumnos(){
+        for (var i = 0; i < alumnos.length; i++) {
+          alumnos[i] = anadirDatos(i);
+        }
+        return alumnos;
+      }
+
+      function anadirDatos(i){
+        var datos = [];
+        var nombre = pedirNombre(i);
+        var nota1 = pedirNota();
+        var nota2 = pedirNota();
+        var nota3 = pedirNota();
+        datos.push(nombre);
+        datos.push(nota1);
+        datos.push(nota2);
+        datos.push(nota3);
+
+        return datos;
+      }
+
+      function pedirNota(){
+        var nota = 0;
+        nota = prompt("Introduce la nota del modulo");
+        while (nota<0 || nota>10){
+          alert("Nota no valida!");
+          nota = prompt("Introduce la nota del modulo");
+        }
+
+        return nota;
+      }
+
+      function pedirNombre(i){
+        var nombre = "";
+        nombre = prompt("Introduce el nombre del alumno " + (i+1) + ":");
+        while(comprobarNombre(nombre)){
+          alert("Nombre no valido!");
+          nombre = prompt("Introduce el nombre del alumno " + (i+1) + ":");
+        }
+        return nombre;
+      }
+
+      function comprobarNombre(cadena){
+        var patronNombre = /^[a-z áéíóúñ]+$/i;
+        return !patronNombre.test(cadena);
+      }
+    </script>
+  </body>
+</html>

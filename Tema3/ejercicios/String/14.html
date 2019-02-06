@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 14</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		/*marca1 = prompt("Introduzca una marca de inicio");
+		marca2 = prompt("Introduzca una marca de fin");*/
+
+		frase = prompt("Introduzca una frase! ");
+
+		// Primera version:
+		//mensaje = frase.substring((frase.indexOf(marca1)+marca1.length), frase.indexOf(marca2));
+		
+
+		// Modificacion 1:
+		
+		marca = prompt("Introduzca una marca de inicio y fin");
+		//mensaje = frase.substring( (frase.indexOf(marca) + marca.length), frase.lastIndexOf(marca));
+		array = mensaje.split(marca);
+		for (var i = 0; i < array.length; i++) {
+			if(i!=0 && i!=array.length-1){
+				document.write(mensaje[i] + "<br>");
+			}
+		}
+
+		// Modificacion 2:
+		// Hice la primera version de modo que se pueden usar mas de un caracter
+		
+
+		document.write(mensaje);
+	</script>
+</body>
+</html>

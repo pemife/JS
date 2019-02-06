@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="1.js"></script>
+  </head>
+  <body>
+    <form>
+      <label for="dni">DNI:
+        <input type="text" name="dni" id="id0">
+        (Formato valido: 99.999.999-X)
+      </label>
+      <br>
+      <label for="nombre">Nombre:
+        <input type="text" name="nombre" id="id1">
+        (Introduzca al menos un nombre y un apellido. Max: 2 nombres y 2 apellidos)
+      </label>
+      <br>
+      <label for="fechaNac">F.Nac:
+        <input type="text" name="fechaNac" id="id2">
+        (Formato valido: dd/mm/yyyy)
+      </label>
+      <br>
+      <label for="email">E-mail:
+        <input type="text" name="email" id="id3">
+        (xxx@yyy.zzz)
+      </label>
+      <br>
+      <label for="paginaWeb">Pág. Web:
+        <input type="text" name="paginaWeb" id="id4">
+        (Formato valido: http://www.xxx.yyy)
+      </label>
+      <br>
+      <label for="contraseña">Contraseña:
+        <input type="password" name="contraseña" id="id5">
+        (Debe contener entre 8 y 10 caracteres)
+      </label>
+      <br>
+      <label for="confirmarContraseña">Confirmar Contraseña:
+        <input type="password" name="confirmarContraseña" id="id6">
+        (Debe contener entre 8 y 10 caracteres)
+      </label>
+      <br>
+      <p id="errores"></p>
+      <input type="button" name="guardar" value="Guardar" id="validar">
+      <input type="button" name="ver" value="Ver" id="botonVer">
+    </form>
+  </body>
+</html>

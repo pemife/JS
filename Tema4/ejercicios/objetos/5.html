@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function Vehiculo(marca_in, modelo_in, color_in, añoFabr_in){
+        this.marca = marca_in;
+        this.modelo = modelo_in;
+        this.color = color_in;
+        this.añoFabr = añoFabr_in;
+        this.arrancar = function (){
+          console.log("Vehiculo | " + this.marca
+                            + " | " + this.modelo
+                            + " | " + this.color
+                            + " | " + "ha arrancado.");
+        }
+      }
+
+      Vehiculo.prototype.mostrarDatos = function(){
+        var resultado = "";
+
+        for (var i in this) {
+          if (this.hasOwnProperty(i)) {
+            resultado +=`${i}: ${this[i]}\n`;
+          }
+        }
+        console.log(resultado);
+      }
+
+      coche1 = new Vehiculo("Mitsubishi", "Montero", "blanco", 2005);
+      coche2 = new Vehiculo("Ferrari", "812 Superfast", "rojo", 2017);
+
+      Vehiculo.prototype.acelerar = function (velocidad){
+        console.log(this.marca + " " + this.modelo + " esta acelerando a " + velocidad + " km/h.");
+      }
+
+      Vehiculo.prototype.cilindrada = "500 cc";
+
+      Vehiculo.prototype.frenar = function (){
+        console.log(this.marca + " " + this.modelo + " ha frenado.");
+      }
+
+      coche1.frenar();
+      coche2.acelerar(220);
+      coche1.mostrarDatos();
+      coche2.arrancar();
+
+      Vehiculo.defineProperties(coche1, {
+        marca: {
+          writable: true,
+          configurable: false,
+          enumerable: true
+        }
+        modelo: {
+          value: 'xx';
+          writable: false,
+          configurable: false
+        }
+        acelerar: {
+          enumerable: false
+        }
+        frenar: {
+          enumerable: false
+        }
+        mostrarDatos: {
+          enumerable: false
+        }
+      })
+
+      function Furgoneta (){
+        //TODO
+      }
+    </script>
+  </body>
+</html>

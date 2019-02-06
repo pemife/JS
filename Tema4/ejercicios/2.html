@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 2</title>
+  </head>
+  <body>
+    <form>
+      <label for="dato1">Importe:
+        <input id="importe" type="text" name="dato1"><br>
+      </label>
+      <label for="dato2">Tipo Producto:
+        <select id="tipo" name="dato2">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </label><br>
+      <input type="button" name="botonCal" value="Calcular" onclick="hola()">
+    </form>
+    <script type="text/javascript">
+
+      /*var importe = prompt("Introduzca el importe:");
+      var tipoProducto = prompt("Introduzca el tipo del producto (1,2,3):");*/
+      function hola(){
+        var importe = Number(document.getElementById('importe').value);
+        var tipoProducto = parseInt(document.getElementById('tipo').value);   // Devuelve NaN
+        obtenerImporteConImpuestos(importe, tipoProducto);
+      }
+      function obtenerImporteConImpuestos(importe, tipoProducto){
+
+        switch (tipoProducto) {
+          case 1:
+            document.write("Importe sin impuestos: " + importe + "<br>Impuestos (Tipo 1: +21%): " + importe*0.21);
+            break;
+          case 2:
+            document.write("Importe sin impuestos: " + importe + "<br>Impuestos (Tipo 2: +10%): " + importe*0.1);
+            break;
+          case 3:
+            document.write("Importe sin impuestos: " + importe + "<br>Impuestos (Tipo 3: +5%): " + importe*0.05);
+            break;
+          default:
+            document.write("Que esta pasando?");
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>

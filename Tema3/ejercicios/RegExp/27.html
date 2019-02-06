@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 27</title>
+</head>
+<body>
+	<script type="text/javascript">
+		cadena = prompt("Introduzca una cadena:");
+		busqueda = prompt("Introduzca que busca:");
+
+		patCadPrin = new RegExp("\\b"+busqueda+"[A-Z]+","gi");
+		patCadFin = new RegExp("[A-Z]+"+busqueda+"\\b","gi");
+		patCadMed = new RegExp("\\B"+busqueda+"\\B","gi");
+
+		document.write(`
+			Cadena:
+			<br>
+			${cadena}
+			<br><br>
+
+			Palabras que coinciden al principio (Ej 24):
+			<br>
+			${cadena.match(patCadPrin)}
+			<br><br>
+
+			Palabras que coinciden al final (Ej 25):
+			<br>
+			${cadena.match(patCadFin)}
+			<br><br>
+
+			Palabras que coinciden en medio (Ej 26):
+			<br>
+			${cadena.match(patCadMed)}
+			<br><br>
+			`);
+	</script>
+</body>
+</html>

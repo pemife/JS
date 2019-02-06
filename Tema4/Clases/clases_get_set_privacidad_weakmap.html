@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+
+		let Person = (function (name, lastName){
+			let personMap = new WeakMap();		
+
+			class Person {
+
+				//let personMap = new WeakMap(); //error!! no se pueden declarar propiedades fuera del constructor
+
+				constructor(name, lastName = 'Pérez'){
+					personMap.set(this, {name: name, lastName: lastName});
+
+				}
+
+				set publicName (name){
+					personMap.get(this).name = name;
+				}
+
+				get name(){
+					return personMap.get(this).name;
+				}
+
+				set publicLastName (lastName){
+					personMap.get(this).lastName = lastName;
+				}
+
+				get lastName(){
+					return personMap.get(this).lastName;
+				}
+
+				static info(){
+					return 'Método estático';
+				}
+			}
+
+		return Person;
+	})();
+			
+		var p = new Person('Pablo');
+		
+		console.log(p.name);
+		p.publicName = 'Pepe';
+		console.log(p.name);
+		p.name = 'Pablo';
+		console.log(p.name); //no podemos acceder directamente a la propiedad name
+		
+		console.log(p.lastName);
+		p.publicLastName = 'Moral';
+		console.log(p.lastName);
+
+		console.log(Person.info());
+
+		console.log(p.personMap);//undefined
+		console.log(personMap);//undefined
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Ejercicio 1 - Pepe Millán</title>
+
+	</head>
+	<body>
+		<form>
+			<h1>QUIZ DOÑANA</h1>
+			<p>
+				<label>Pregunta 1: ¿Cuál es el número mayor?</label>
+				<input type ='number' readonly>
+				<input type ='number' readonly>
+				<input type ='number' readonly>
+				<input type='text' id="respuesta1">
+			</p>
+			<p>
+				<label>Pregunta 2: ¿Cuántas horas han pasado?</label>
+				<input type='text' readonly>
+				<input type='text' id="respuesta2">
+			</p>
+			<p>
+				<label>TIEMPO</label>
+				<input type='number' id="segundosRestantes">
+			</p>
+			<input type='button' value="Parar" onClick="finConcurso()">
+
+		</form>
+
+		<script>
+			var numeros = creaNumeros();
+			var añoAleatorio = creaAñoAleatorio();
+			tiempoRestante(10);
+			a = setInterval(cuentaAtras, 1000);
+
+
+			function creaNumeros(){
+				var rndNums = new Array(3);
+				for (var i = 0; i < rndNums.length; i++) {
+					rndNums[i] = Math.ceil(Math.random()*100);
+					document.forms[0].elements[i].value = rndNums[i];
+				}
+
+				return rndNums;
+			}
+
+			function creaAñoAleatorio(){
+				añoActual = new Date();
+				var añoDif = añoActual.getFullYear() - 1970;
+
+				var rnd = Math.floor((Math.random() * añoDif)) + 1970;
+				var añoRnd = new Date();
+				añoRnd.setFullYear(rnd);
+				document.forms[0].elements[4].value = añoRnd.getFullYear();
+
+				return añoRnd;
+			}
+
+			function tiempoRestante(tiempo){
+				document.forms[0].elements[6].value = tiempo;
+			}
+
+			function cuentaAtras(){
+				var segundosQuedan = document.getElementById('segundosRestantes').value;
+				segundosQuedan--;
+				if(segundosQuedan == 0){
+					document.getElementById('segundosRestantes').value = segundosQuedan;
+					finTiempo();
+				}
+				document.getElementById('segundosRestantes').value = segundosQuedan;
+			}
+
+			function finConcurso(){
+				clearInterval(a);
+				var resultadoCorrecto = new Array(2);
+				resultadoCorrecto[0] = Math.max(numeros);
+				resultadoCorrecto[1] = (añoActual - añoAleatorio)/3600000;
+
+				var resultado = new Array(2);
+				resultado[0] = document.getElementById('respuesta1');
+				resultado[1] = document.getElementById('respuesta2');
+
+				ventanaConcurso = window.open("", "", "width=300, height=100");
+
+				var aciertos = 0;
+				for (var i = 0; i < resultado.length; i++) {
+					if(resultado[i] == resultadoCorrecto[i]){
+						aciertos++;
+					}
+				}
+
+				var xSegundos = 60 - document.getElementById('segundosRestantes').value;
+
+				ventanaConcurso.document.write("Has tardado " + xSegundos + " segundos<br/>");
+				ventanaConcurso.document.write("El numero de respuestas acertadas ha sido " + aciertos);
+			}
+
+			function finTiempo(){
+				clearInterval(a);
+				ventanaAux = window.open("", "", "width=300, height=100");
+				var pxHorz = window.innerWidth - ventanaAux.innerWidth;
+				var pxVert = window.innerHeight - ventanaAux.innerHeight;
+				ventanaAux.moveTo(pxHorz, pxVert);
+				ventanaAux.document.write("¡¡¡LA BOMBA HA EXPLOTADO!!!");
+			}
+		</script>
+	</body>
+</html>

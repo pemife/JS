@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+      // a. Crear constructor.
+      function Vehiculo(marca_in, modelo_in, color_in, añoFabr_in){
+
+        // b. Crear propiedades: marca, modelo, color y año fabricación.
+        this.marca = marca_in;
+        this.modelo = modelo_in;
+        this.color = color_in;
+        this.añoFabr = añoFabr_in;
+      }
+
+      // c. Instanciar dos objetos.
+      coche1 = new Vehiculo("Mitsubishi", "Montero", "blanco", 2005);
+      coche2 = new Vehiculo("Ferrari", "812 Superfast", "rojo", 2017);
+
+      // d. Mostrar por pantalla una propiedad con notación por puntos. Objeto 1 - marca.
+      document.write(coche1.marca + "</br>");
+
+      // e. Mostrar por pantalla una propiedad con notación por corchetes. Objeto 2 - color.
+      document.write(coche2['marca'] + "</br>");
+
+      // f. Crear el método mostrarDatos.
+      Vehiculo.prototype.mostrarDatos = function(){
+        var resultado = "";
+
+        for (var i in this) {
+          if (this.hasOwnProperty(i)) {
+            resultado +=`<br> ${i}: ${this[i]}`;
+          }
+        }
+        document.write(resultado);
+      }
+
+      // g. Crear un método que tenga argumentos acelerar(velocidad). Mostrará
+      // por pantalla que el coche ha acelerado a la velocidad pasada.
+      // TODO
+
+
+    </script>
+  </body>
+</html>

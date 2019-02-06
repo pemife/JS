@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ventana Secundaria</title>
+  </head>
+  <body>
+    <input type="button" value="Izquierda" onclick="moverIzquierda()">
+    <input type="button" value="Derecha" onclick="moverDerecha()">
+    <script type="text/javascript">
+      var pixeles = opener.pixeles.value;
+      function moverIzquierda(){
+        window.moveBy(0-pixeles,0);
+      }
+      function moverDerecha(){
+        window.moveBy(pixeles,0);
+      }
+    </script>
+  </body>
+</html>

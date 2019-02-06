@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 30</title>
+</head>
+<body>
+	<script type="text/javascript">
+		cadena = `<html>
+					<head><title>codigo ejemplo</title></head>
+					<body>
+						<h1>Titulo de ejemplo</h1>
+						<p>Este es un parrafo de ejemplo</p>
+						<p>Y aqui hay otro <b>negrita</b> parrafo</p>
+						<h1>Otro titulo</h1>
+						<h1>Y Otro ultimo titulo</h1>
+						<ul>
+							<li>Uno</li>
+							<li>dos</li>
+							<li>tres</li>
+							<li><a href="www.google.es">enlace</a></li>
+						</ul>
+					</body>
+				</html>`;
+
+		//cadenaPatron = /\<[A-z0-9="\. ]+\>[^\<\/\>]*\<\/[A-z0-9="\. ]+\>/gi;
+		cadenaPatron = /\<([a-z0-9="\. \/]*)> *.* *<\/\1>/gmi;		//Corregido
+		console.log(cadena.match(cadenaPatron));
+
+	</script>
+</body>
+</html>

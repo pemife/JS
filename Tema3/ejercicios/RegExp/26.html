@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 26</title>
+</head>
+<body>
+	<script type="text/javascript">
+		cadena = prompt(`Introduzca una cadena (buscamos "te" enmedio)`);
+
+		//patronCadena = /\b[a-z]+te[a-z]+\b/gi;
+		patronCadena = /\B+te\B/gi;
+		document.write(`Cadena:<br>${cadena}<br><br>`);
+		document.write(`Palabras que coinciden: <br>${cadena.match(patronCadena)} <br><br>`);
+		document.write(`Veces que aparece "te" enmedio:<br>${cadena.match(patronCadena).length}`);
+	</script>
+</body>
+</html>

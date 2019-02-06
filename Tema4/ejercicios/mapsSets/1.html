@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var cursos = new Map();
+      cursos.set("DWECL", "Desarrollo Web en Entorno Cliente");
+      cursos.set("DWESE", "Desarrollo Web en Entorno Servidor");
+      cursos.set("DIW", "Diseño de Interfaces Web");
+      cursos.set("DAW", "Despliegue de Aplicaciones Web");
+      cursos.set("EIE", "Empresas e Iniciativa Emprendedora");
+
+      console.log("\na. Muestra cuantos modulos hay almacenados");
+      console.log(cursos.size);
+
+      console.log("\nb. Muestra el contenido de la estructura");
+      for (let [clave, valor] of cursos){
+        console.log(`${clave} -> ${valor}`);
+      }
+      // Con funcion arrow
+      // var mostrar = (value, key, cursos) => console.log(`${key} => ${value}`);
+      // cursos.forEach(mostrar);
+
+      console.log("\nc. Devuelve las abreviaturas de todos los modulos guardados");
+      for (variable of cursos.keys()) {
+        console.log(variable);
+      }
+
+      console.log("\nd. Devuelve el nombre completo de todos los modulos");
+      for (variable of cursos.values()) {
+        console.log(variable);
+      }
+
+      console.log("\ne. Consulta si esta el modulo 'DAW'");
+      console.log("Esta el modulo DAW? -> " + cursos.has("DAW"));
+
+      if(cursos.has("DAW")){
+        cursos.delete("DAW");
+      }
+
+      console.log("\nf. Si esta, eliminalo. Vuelve a mostrar el contenido de la estructura");
+      console.log("Muestro el resultado...");
+      for (let [clave, valor] of cursos){
+        console.log(`${clave} -> ${valor}`);
+      }
+    </script>
+  </body>
+</html>

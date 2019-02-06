@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 25</title>
+</head>
+<body>
+	<script type="text/javascript">
+		cadena = prompt(`Introduzca una cadena (buscamos "s" en final)`);
+
+		patronCadena = /[a-z]+s\b/gi;
+		document.write(`Cadena:<br>${cadena}<br><br>`);
+		document.write(`Palabras que coinciden:<br>${cadena.match(patronCadena)}`);
+	</script>
+</body>
+</html>

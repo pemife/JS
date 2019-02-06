@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+
+		class Persona {
+			constructor(nombre,apellidos){
+				this.nombre = nombre;
+				this.apellidos = apellidos;
+
+			}
+/*
+			//error no se puede sobrecargar el constructor
+			constructor(nombre){
+				this.nombre = nombre;
+				this.apellidos = 'Pérez';
+			}
+*/
+
+
+			get nombreCompleto(){
+				return `${this.nombre} ${this.apellidos}`;
+			}
+
+			static info(){
+				return 'Método estático';
+			}
+
+		}
+
+		var p = new Persona('Pablo', 'Pérez');
+		console.log(p.nombre);
+		console.log(p.apellidos);
+		console.log(p.nombreCompleto);
+
+		//console.log(p.info()); // error
+		console.log(Persona.info());
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

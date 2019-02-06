@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 13</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var cadena = "";
+		for (var i = 0; i < 5; i++) {
+		 	cadena += prompt(`Escribe cadena ${i}:`);
+		}
+		document.write(cadena);
+
+		//Ordenar array de caracteres alfabeticamente, y construir un mensaje de respuesta contando las letras que la componen
+		cadena = cadena.split("");
+		cadena = cadena.sort();
+		// cadena -> [a,a,a,c,c,e,e,g,h,u,z] (Como se veria el array)
+
+		// Declaro variables "vacias" para el siguiente for
+
+		mensaje = "<br>";		//Mensaje de respuesta final
+		actual = "";			//Valor del caracter(cadena) en la iteracion "actual"
+		antes = cadena[0];		//Valor del caracter(cadena) en la iteracion "anterior"
+		contador = 1;			//Cuenta las veces que aparece un caracter
+
+		for (var i = 0; i < cadena.length; i++) {
+			actual = cadena[i];
+			if(actual == antes){
+				contador++
+			}else{
+				mensaje += `"${antes}": ${contador}<br>`;
+				contador = 1;
+			}
+			antes = cadena[i];
+		}
+		mensaje += `"${antes}": ${contador}<br>`
+
+		document.write(mensaje);
+		
+	</script>
+</body>
+</html>

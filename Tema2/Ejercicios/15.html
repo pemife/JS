@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 15</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var palin = prompt("Introduzca una palabra!");
+		var nilap = "";
+		var j = 0;
+
+		for (var i = palin.length - 1; i >= 0; i--) {
+			nilap += "" + palin[i];
+		}
+
+		document.write(`Palabra selecionada:<br>${palin}<br><br>Palabra resultante:<br>${nilap}`);
+
+		palin==nilap ? alert("Es un palindromo") : alert("No e sun palindromo");
+	</script>
+</body>
+</html>

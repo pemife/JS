@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript" defer>
+		function mostrarMenu(){
+			console.log('Calculadora');
+			console.log('Pulse 1 para sumar');
+			console.log('Pulse 2 para restar');
+			console.log('Pulse 3 para multiplicar');
+			console.log('Pulse 4 para dividir');
+			console.log('Pulse 5 para obtener el módulo');
+			console.log('Pulse 6 para elevar a la potencia');
+			console.log('Pulse 7 para la raiz cuadrada');
+			console.log('Pulse 8 para el LN¹⁰');
+			console.log('Pulse 9 para el LN²');
+			console.log('Pulse 10 para el Log²E');
+			console.log('Pulse 11 para convertir numeros');
+			console.log('Pulse 0 para salir');
+		}
+		var opcion = -1;
+		var x,y,resultado;
+		do{
+			mostrarMenu();
+			opcion = prompt("Que opcion desea?");
+			switch(opcion){
+
+				case "1":
+					pedirNumeros();
+					resultado = parseInt(x) + parseInt(y);
+					console.log(resultado);
+					break;
+
+				case "2":
+					pedirNumeros();
+					resultado = parseInt(x) - parseInt(y);
+					console.log(resultado);
+					break;
+
+				case "3":
+					pedirNumeros();
+					resultado = parseInt(x) * parseInt(y);
+					console.log(resultado);
+					break;
+
+				case "4":
+					pedirNumeros();
+					resultado = parseInt(x) / parseInt(y);
+					console.log(resultado);
+					break;
+
+				case "5":
+					pedirNumeros();
+					resultado = parseInt(x) % parseInt(y);
+					console.log(resultado);
+					break;
+
+				case "6":
+					pedirNumeros();
+					resultado = Math.pow(parseInt(x),parseInt(y));
+					console.log(resultado);
+					break;
+
+				case "7":
+					x = prompt("Numero 1");
+					resultado = Math.sqrt(parseInt(x));
+					break;
+
+				case "8":
+					console.log(Math.LN10);
+					break;
+
+				case "9":
+					console.log(Math.LN2);
+					break;
+
+				case "10":
+					console.log(Math.LOG2E);
+					break;
+
+				case "11":
+					x = prompt("Introduzca un numero");
+					y = prompt("Introduzca la base del numero anterior(bin-2,oct-8,hex-16,dec-10)");
+					patBin = /[0-1]+/;
+					patOct = /[0-7]/;
+					patHex = /[0-9a-d]+/i;
+						case "2":
+						switch(y){
+
+					}
+
+				case "0":
+					if(!confirm("Desea salir?")){
+						opcion = -1;
+					}
+					break;
+
+				default:
+					alert("Introduzca una opcion válida!");
+			}
+		}while(opcion!="0");
+
+		function pedirNumeros(){
+			x = prompt("Numero 1");
+			while(isNaN(parseInt(x))){ //COMPRUEBA SI ES UN NUMERO
+				alert("Introduzca un numero válido!")
+				x = prompt("Numero 1");
+			}
+
+			y = prompt("Numero 2");
+			while(isNaN(parseInt(y))){ //COMPRUEBA SI ES UN NUMERO
+				alert("Introduzca un numero válido!")
+				y = prompt("Numero 2");
+			}
+		}
+	</script>
+</body>
+</html>

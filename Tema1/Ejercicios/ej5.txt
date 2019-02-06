@@ -1,0 +1,39 @@
+1. Señale la respuesta correcta con
+respecto a las características de un
+navegador web:
+
+c) Todos los navegadores actuales
+soportan la ejecución de
+JavaScript
+
+--------------------------------------
+
+2. ¿Cuál de los siguientes módulos no
+forma parte de la arquitectura de
+referencia de un navegador web?
+
+a) Módulo de gestión de
+usuarios
+
+--------------------------------------
+
+3. Señale la respuesta correcta con
+respecto a las características de XHTML:
+
+b) Es la unión de los principios de
+XML con el lenguaje HTML
+
+--------------------------------------
+
+4. Señale la respuesta correcta respecto
+a JavaScript:
+
+c) No se puede utilizar para
+programar applets.
+
+--------------------------------------
+
+5. ¿Cuál de los siguientes fragmentos de código sería correcto para integrar código
+JavaScript en HTML?
+
+d) Ninguna de las anteriores 

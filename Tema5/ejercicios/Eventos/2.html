@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <div class="container">
+            <div id="cuadrado">
+
+            </div>
+        </div>
+        <script type="text/javascript">
+            cuadrado.style.position = "absolute";
+            cuadrado.style.width = 100 + "px";
+            cuadrado.style.height = 100 + "px";
+            cuadrado.style.background = "red";
+            cuadrado.style.top = "0px";
+            cuadrado.style.left = "0px";
+
+            document.addEventListener("keydown", (event) => {
+                var x = parseInt(cuadrado.style.top);
+                var y = parseInt(cuadrado.style.left);
+                switch (event.code){
+                    case "Numpad8":
+                    case "ArrowUp":
+                        cuadrado.style.top = x - 10 + "px";
+                        break;
+                    case "Numpad2":
+                    case "ArrowDown":
+                        cuadrado.style.top = x + 10 + "px";
+                        break;
+                    case "Numpad4":
+                    case "ArrowLeft":
+                        cuadrado.style.left = y - 10 + "px";
+                        break;
+                    case "Numpad6":
+                    case "ArrowRight":
+                        cuadrado.style.left = y + 10 + "px";
+                        break;
+                }
+            });
+
+        </script>
+    </body>
+</html>

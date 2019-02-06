@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+
+		class Persona {
+
+			constructor(nombre, edad){
+				this.nombre = nombre;
+				this.edad = edad;
+			}
+
+			getNombre(){
+				return this.nombre;
+			}
+
+			getEdad(){
+				return this.edad;
+			}
+
+			setNombre(nombre){
+				this.nombre = nombre;
+			}
+
+			setEdad(edad){
+				this.edad = edad;
+			}
+
+			info(){
+				return 'Soy persona';
+			}
+
+			static info(){
+				return "Método estático";
+			}
+
+		}
+
+		class Alumno extends Persona{
+
+			constructor(nombre, edad, curso){
+				super(nombre,edad);
+				this.curso = curso;
+			}
+
+			
+			info(){
+				return `${super.info()}  y también alumno`;
+
+			}
+			
+		}
+
+		var p = new Persona("María", 15);
+
+		console.log(p.getEdad());
+		console.log(p.getNombre());
+		p.setNombre("Manuel");
+		console.log(p.getNombre());
+		
+		console.log(Persona.info());
+
+		var a = new Alumno("Guillermo", 20, "2DAW");
+		console.log(a.getNombre());
+		console.log(a.info());
+		console.log(Alumno.info());
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

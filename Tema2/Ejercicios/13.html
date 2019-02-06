@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejericio13</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var valores = [true, 5, false, "hola", "adios", 2] ;
+
+		var numeros = [];
+		var booleanos = [];
+		var cadenas = [];
+		for (var i = 0; i < valores.length; i++) {
+			switch(typeOf(valores[i])){
+				case "boolean":
+					booleanos.push(valores[i]);
+					break;
+
+				case "number":
+					numeros.push(valores[i]);
+					break;
+
+				case "string":
+					cadenas.push(valores[i]);
+					break;
+			}
+		}
+
+		//TODO
+	</script>
+</body>
+</html>

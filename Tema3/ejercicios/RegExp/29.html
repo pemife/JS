@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 29</title>
+</head>
+<body>
+	<script type="text/javascript">
+		cadena = `cuando tomes un cafe \<script\>document.write("hola")\<\/script\>`;
+
+		cadenaPatron = /<\/?script>/gmi;
+
+		cadena.replace(cadenaPatron, "");
+		console.log(cadena + "<br><br>");
+
+		console.log(cadena.match(cadenaPatron));
+	</script>
+</body>
+</html>

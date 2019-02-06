@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      class Empleado {
+        constructor(nombre, depart){
+          this.__nombre = nombre || "";
+          this.__depart = depart || "General";
+        }
+
+        get nombre(){ return __nombre; }
+        get depart(){ return __depart; }
+
+        set nombre(nombre){ this.__nombre = nombre;  }
+        set depart(depart){ this.__depart = depart;  }
+      }
+
+      Empleado.prototype.mostrarDatos = function(){
+        var resultado = "";
+
+        for (var i in this) {
+          if (this.hasOwnProperty(i)) {
+            resultado +=`|${i}: ${this[i]}| `;
+          }
+        }
+        console.log(resultado);
+      }
+
+      class Director extends Empleado{
+        constructor(nombre, depart, informes){
+          super(nombre, depart);
+          this.__informes = informes || [];
+        }
+
+        get informes(){ return __informes;  }
+        set informes(informes){  this.__informes = informes;}
+      }
+
+      class Trabajador extends Empleado{
+        constructor(nombre, depart, proyectos){
+          super(nombre, depart);
+          this.__proyectos = proyectos || [];
+        }
+
+        get proyectos(){  return __proyectos; }
+        set proyectos(proyectos){ this.__proyectos = proyectos; }
+      }
+
+      class Ingeniero extends Trabajador{
+        constructor(nombre, depart, proyectos, maquina){
+          super(nombre, depart, proyectos);
+          this.__maquina = maquina || "";
+        }
+        
+        get maquina(){  return __maquina; }
+        set maquina(maquina) {  this.__maquina = maquina; }
+      }
+
+      // Comprobando el funcionamiento
+
+      var e1 = new Empleado("paco", "1");
+      // var e2 = new Empleado( , "2");   // Suponia que funcionaria al poner
+      var e3 = new Empleado();            // un solo parametro
+
+      e1.mostrarDatos();
+      // e2.mostrarDatos();
+      e3.mostrarDatos();
+
+      var d1 = new Director("juana", "administracion", ["informe1", "informe2"]);
+      var t1 = new Trabajador("pepe", "informatica", "DAW");
+      var i1 = new Ingeniero("ana", "asd", "twitter", "315");
+
+      d1.mostrarDatos();
+      t1.mostrarDatos();
+      i1.mostrarDatos();
+    </script>
+  </body>
+</html>

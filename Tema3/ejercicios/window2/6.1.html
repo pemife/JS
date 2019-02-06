@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form>
+      <input type="color" onchange="otroColor()" id="colores">
+    </form>
+    <script type="text/javascript">
+      function otroColor(){
+        var color = colores.value;
+      //  var color = document.forms[0].elements[0].value;
+        opener.texto.value = color;
+        opener.cuerpo.style.background = color;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p>El resultado de la potencia es:</p>
+    <br><br>
+    <input type="button" value="Calcular" id="boton" onclick="calcular()">
+    <input type="text" id="resultado">
+    <script type="text/javascript">
+      function calcular(){
+        var b = window.parent.document.getElementById("base").value;
+        var e = window.parent.document.getElementById("exponente").value;
+        var r = Math.pow(b,e);
+        document.getElementById("resultado").value = r;
+      }
+    </script>
+  </body>
+</html>

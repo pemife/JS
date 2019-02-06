@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+
+        class Persona {
+ 
+        constructor(name) {
+            this.name = name;
+            
+            // let _privada = 'Privada';
+            
+            // let miFuncionPrivada = function() { 
+            //     console.log('Soy una función. ',_privada); 
+            // } 
+            // this.miFuncionPublica = function(){ 
+            //   //  return miFuncionPrivada.call(this); 
+            //   return miFuncionPrivada();
+            // }
+
+            var _clave = '';
+            this.setClave = function(clave) {
+                   _clave = clave;
+            }
+            
+            this.getClave = function() {
+               return _clave;
+            }
+        }
+
+        //NO SE PUEDE HACER ÉSTO, NO ENCUENTRA _CLAVE    
+        // setClave(clave) {
+        //     _clave = clave; //_clave not defined
+        // }
+        // getClave() {
+        //     return _clave;
+        // }
+         
+        //fuera del constructor no podemos definir propiedades, sólo métodos. 
+        //Esto nos obliga a asignar estas propedades  a través del prototipo directamente. Pero no podemos usar Persona.prototype como usamos en la sintaxis tradicional, pues es como si sobresescribiésemos el prototipo y no está permitido  
+
+       
+    }
+
+        // Añadimos aquí las propiedades comunes que antes no pudimos y los métodos para acceder a estas
+        Persona.prototype.staffComun = {
+            almacen: [],
+            almacenarVariables: function(v) {
+                this.almacen.push(v);
+            },
+            getAlmacen: function() {
+                return this.almacen;
+            }
+        }
+
+        var persona1 = new Persona("Pepe");
+        var persona2 = new Persona("Pepa");
+        
+        persona1.staffComun.almacenarVariables('Uno');
+        console.log(persona1.staffComun.getAlmacen());
+
+    var persona1 = new Persona("Pepe");
+    console.log(persona1.name); //Pepe
+  //persona1.miFuncionPublica();
+    persona1.setClave('111');
+    console.log(persona1.getClave()); //111
+    console.log(persona1._clave); //undefined
+     console.log(persona1.staffComun.almacen); //['Uno','Dos']
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+

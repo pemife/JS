@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var frase = prompt("Introduzca una frase");
+		/*var numeros = "1234567890";
+		var esNumero = false;*/
+		for(var i = 0; i<=frase.length - 1; i++){
+			/*esNumero = false;
+			for(var j = 0; j<=numeros.length; j++){
+				if(frase[i]==numeros[j]){
+					esNumero = true;
+					break;
+				}
+			}*/
+			if(isNaN(frase[i]))
+				document.write(frase[i] + "<br>");
+		}
+	</script>
+</body>
+</html>

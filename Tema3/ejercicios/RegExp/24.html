@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 24</title>
+</head>
+<body>
+	<script type="text/javascript">
+		cadena = prompt(`Introduzca una cadena (buscamos "lo" en comienzo)`);
+
+		patronCadena = /\b(lo)[A-Z]+/gi;
+		document.write(`Cadena: <br> ${cadena} <br><br>`);
+		document.write(`Palabras que coinciden:<br>${cadena.match(patronCadena)}`);
+	</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 1</title>
+  </head>
+  <body>
+    <form>
+      <input type="button" name="botonAnadir" value="Añadir" onclick="anadir()">
+      <input type="button" name="botonMenor" value="Menor" onclick="devolverMenor()">
+      <input type="button" name="botonTriple" value="Triplicar" onclick="triplicar()">
+    </form>
+    <ul id="lista">
+
+    </ul>
+    <script>
+      function anadir(){
+        var elementos = prompt("Introduce numeros (num,num,num...)").split(",");
+        for (i in elementos){
+          elementos[i] = parseInt(elementos[i]);
+        }
+        anadirElementos(...elementos);
+      }
+
+      function anadirElementos(...elementos){
+        for (let i in elementos){
+          document.getElementById('lista').innerHTML += '<li>'+ elementos[i] + '</li>';
+        }
+      }
+
+      function devolverMenor(){
+        var items = document.getElementsByTagName("li");
+        var numeros = [];
+        for (i=0; i<items.length; i++){
+          numeros.push(Number(items[i].innerHTML));
+        }
+        alert(Math.min(...numeros));
+      }
+
+      var calcTriple = num => num * 3;
+
+      function triplicar(){
+        var items = document.getElementsByTagName('li');
+        for (var i = 0; i < items.length; i++){
+          Number(items[i].innerHTML) += "->" + calcTriple(Number(items[i].innerHTML));
+        }
+      }
+    </script>
+  </body>
+</html>

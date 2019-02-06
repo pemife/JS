@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+      class Modulo{
+        constructor(nombre, duracion){
+          var nombre = nombre;
+          var duracion = duracion;
+
+          this.get nombre()   {    return nombre;   }
+          this.get duracion() {    return duracion; }
+
+          this.set nombre(nuevoNombre){ this.nombre = nuevoNombre;}
+          this.set duracion(nuevaDuracion){  this.duracion = nuevaDuracion;}
+        }
+      }
+
+      var modulos = new WeakMap();
+
+      var m1 = new Modulo("DWECL", 123);
+      var m2 = new Modulo("DWESE", 671);
+      var m3 = new Modulo("DIW", 145);
+      var m4 = new Modulo("DAW", 123);
+      var m5 = new Modulo("EIE", 234);
+
+      modulos.set(m1, 20);
+      modulos.set(m2, 16);
+      modulos.set(m3, 10);
+      modulos.set(m4, 167);
+      modulos.set(m5, 723);
+
+      for (variable of modulos) {
+        console.log("El modulo " + variable.get().nombre
+                  + " de duracion " + variable.get().duracion
+                  + " tiene " + variable)
+      }
+    </script>
+  </body>
+</html>

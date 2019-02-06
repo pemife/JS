@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function Empleado (nombre, depart){
+        this.nombre = nombre || "";
+        this.depart = depart || "General";
+      }
+
+      Empleado.prototype.mostrarDatos = function(){
+        var resultado = "";
+
+        for (var i in this) {
+          if (this.hasOwnProperty(i)) {
+            resultado +=`|${i}: ${this[i]}| `;
+          }
+        }
+        console.log(resultado);
+      }
+
+      function Director(nombre, depart, informes){
+        Empleado.call(this, informes);
+        this.informes = informes || [];
+      }
+
+      Director.prototype = new Empleado();
+      Director.prototype.constructor = Director;
+
+      function Trabajador(nombre, depart, proyectos){
+        Empleado.call(this, proyectos);
+        this.maquina = proyectos || [];
+      }
+
+      Trabajador.prototype = new Empleado();
+      Trabajador.prototype.constructor = Trabajador;
+
+      function Ingeniero(nombre, depart, proyectos, maquina){
+        Trabajador.call(this, maquina);
+        this.maquina = maquina || "";
+      }
+
+      Ingeniero.prototype = new Trabajador();
+      Ingeniero.prototype.constructor = Ingeniero;
+
+      Ingeniero.prototype.depart = "Ingenieria";
+
+      // Comprobando el funcionamiento
+
+      var e1 = new Empleado("paco", "1");
+      // var e2 = new Empleado( , "2");   // Suponia que funcionaria al poner
+      var e3 = new Empleado();            // un solo parametro
+
+      e1.mostrarDatos();
+      // e2.mostrarDatos();
+      e3.mostrarDatos();
+
+      var d1 = new Director("juana", "administracion", ["informe1", "informe2"]);
+      var t1 = new Trabajador("pepe", "informatica", "DAW");
+      var i1 = new Ingeniero("ana", "asd", "twitter", "315");
+
+      d1.mostrarDatos();
+      t1.mostrarDatos();
+      i1.mostrarDatos();
+    </script>
+  </body>
+</html>

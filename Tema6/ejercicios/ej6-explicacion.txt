@@ -1,0 +1,5 @@
+3 cajas, 2 arriba, y 1 abajo, dos botones, uno genera y otro compara
+genera: genera contenido que contendra el div
+compara: compara el contenido, y el mayor, lo pasa a la caja de abajo
+si vuelve a generar y comparar, machaca el numero mayor de arriba 
+al div de abajo.

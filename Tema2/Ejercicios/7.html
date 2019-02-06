@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 7</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var numero = prompt("Ingrese un numero:");
+		while(numero<0 || numero>1000){
+			numero = prompt("Ingrese un numero válido!");
+		}
+		for (var i = 0; i <= numero.length -1; i++) {
+			document.write("digito:" + numero[i] + "<br>");
+		}
+		// NO COMPRUEBA SI NO ES UN NUMERO
+	</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio4</title>
+  </head>
+  <body>
+    <form>
+      <input type="text" id="dado1" value="">
+      <input type="text" id="dado2" value="">
+      <input type="button" name="botonLanzar" value="Lanzar" onclick="lanzar()">
+      <input type="button" name="botonLanzar" value="Lanzar10" onclick="lanzar10()">
+    </form>
+
+    <p>El resultado 2 ha salido: <span id="2">0</span> veces</p>
+    <p>El resultado 3 ha salido: <b id="3">0</b> veces</p>
+    <p>El resultado 4 ha salido: <b id="4">0</b> veces</p>
+    <p>El resultado 5 ha salido: <b id="5">0</b> veces</p>
+    <p>El resultado 6 ha salido: <b id="6">0</b> veces</p>
+    <p>El resultado 7 ha salido: <b id="7">0</b> veces</p>
+    <p>El resultado 8 ha salido: <b id="8">0</b> veces</p>
+    <p>El resultado 9 ha salido: <b id="9">0</b> veces</p>
+    <p>El resultado 10 ha salido: <b id="10">0</b> veces</p>
+    <p>El resultado 11 ha salido: <b id="11">0</b> veces</p>
+    <p>El resultado 12 ha salido: <b id="12">0</b> veces</p>
+
+    <script type="text/javascript">
+      function lanzar(){
+        var dado1 = Math.floor(Math.random()*6)+1;
+        var dado2 = Math.floor(Math.random()*6)+1;
+
+        document.forms[0].elements[0].value = dado1;
+        document.getElementById("dado2").value = dado2;
+
+        var res = dado1 + dado2;
+
+        document.getElementById(res).innerHTML = parseInt(document.getElementById(res).innerHTML) + 1;
+      }
+      function lanzar10(){
+        for (var i = 0; i < 10; i++) {
+          lanzar();
+        }
+      }
+    </script>
+  </body>
+</html>

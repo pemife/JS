@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+
+		class Persona {
+
+			constructor(nombre,apellidos){
+				this._nombre = nombre;
+				this._apellidos = apellidos;
+			}
+
+			get nombre(){
+		        return this._nombre;
+		    }
+
+			set nombre(nombre){
+		        this._nombre = nombre;
+		    }
+
+		    get apellidos(){
+		        return this._apellidos;
+		    }
+
+		 	set apellidos(apellidos){
+		        this._apellidos = apellidos;
+		    }
+
+			get nombreCompleto(){
+				return `${this._nombre} ${this._apellidos}`;
+			}
+
+			static info(){
+				return 'Método estático';
+			}
+		}
+
+		var p = new Persona('Pablo', 'Pérez');
+		console.log(p.nombre);
+		console.log(p._nombre); //es pública
+		p.nombre = 'Pepe';
+		console.log(p.nombre);
+		console.log(p.apellidos);
+		console.log(p._apellidos); //es pública
+		console.log(p.nombreCompleto);
+		//console.log(p.info()); // error
+		console.log(Persona.info());
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

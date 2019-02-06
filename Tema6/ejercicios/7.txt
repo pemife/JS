@@ -1,0 +1,4 @@
+html creado dinamicamente
+
+primera manera, insertar dinamicamente elementos
+table tr y td por cada fila y celda

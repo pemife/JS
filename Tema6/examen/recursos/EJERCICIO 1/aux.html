@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+      window.onload = function(){
+        var inputs = document.getElementsByTagName('input');
+        for (input of inputs) {
+          input.addEventListener('change', function(e){
+            validar(e.srcElement);
+          });
+        }
+      }
+      function validar(elemento){
+        console.log(elemento.nextSibling);
+        if(!/^[0-9][0-9]$/g.test(elemento.value)){
+          if(elemento.nextSibling.children.length == 0){
+            elemento.nextSibling.appendChild(document.createTextNode("Debe ser un numero de 2 cifras"));
+          }
+          elemento.nextSibling.replaceChild(document.createTextNode("Debe ser un numero de 2 cifras"), elemento.nextSibling.children[0]);
+        } else {
+          if(!elemento.nextSibling.children.length == 0){
+            elemento.nextSibling.removeChild(children[0]);
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text"><p></p>
+    <br>
+    <input type="text"><p></p>
+    <br>
+    <input type="text"><p></p>
+    <br>
+    <button type="button">Cerrar</button>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+TEST DE CONOCIMIENTOS
+
+1.- ¿El lenguaje JavaScript distingue entre
+mayúsculas y minúsculas?
+
+c) Distingue en todo el código JavaScript
+
+
+2.- Para terminar una instrucción en JavaScript se
+utiliza:
+
+d)Un punto y coma o un salto de línea
+
+
+3.- ¿Cuál de los siguientes comentarios es correcto
+en JavaScript?
+
+c)//comentario
+
+
+4.- ¿Cuál es el número más grande representable
+por JavaScript?
+
+c)1.7976931348623157x10 308
+
+
+5.- En la expresión a+b, ¿qué parte de la expresión
+son las letras a y b?
+
+b)Operandos
+
+
+6.- ¿Cuál es el resultado de la expresión
+10<100? 'Verdadero' : 'Falso'?
+
+d)Verdadero
+
+
+7.- ¿Para qué sirve la palabra else en una
+sentencia if-else?
+
+c) Para ejecutar instrucciones en el caso en que
+la expresión condicional sea falsa
+
+
+8.- ¿Qué sentencia condicional permite ejecutar
+instrucciones independientemente de si una
+condición sea verdadera o falsa?
+
+b) do-while

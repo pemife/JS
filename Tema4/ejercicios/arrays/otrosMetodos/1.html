@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var numeros = new Array(10);
+      numeros = crearNumeros(numeros);
+      document.write("Numeros aleatorios:</br>" + numeros + "</br></br>");
+
+      var filtrados = numeros.filter(menores8);
+      document.write("Numeros menores de 8:</br>" + filtrados + "</br></br>");
+
+      function impar (num){
+        return ((num%2 == 0) ? num : "impar");
+      }
+
+      document.write("Numeros con impares:</br>");
+      //numeros.forEach((function(num){document.write((num%2==0)?num:"impar");}));
+      document.write(numeros.forEach(impares));
+
+      function crearNumeros(nums){
+        for (var i = 0; i < nums.length; i++) {
+          nums[i] = Math.floor(Math.random()*11);
+        }
+        return nums;
+      }
+
+      function menores8(num){
+        return num < 8;
+      }
+
+      function impares(num){
+        return ((num % 2) == 0 ? num : "impar");
+      }
+    </script>
+  </body>
+</html>

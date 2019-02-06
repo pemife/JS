@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio Patrones URL</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var urls = `http://www.google.es
+					<br>
+					https://url.com`;
+
+		//var patron1 = new RegExp("http(s)?:\/\/(www\.)?[A-Za-z0-9]+\.[a-z]{2,3}","gm");
+		var patron1 = new RegExp("(http|https):\/\/(www\.)?[a-z0-9]*\.[a-z0-9]*","gi");
+
+		document.write(urls + "<br><br>");
+		document.write(urls.match(patron1));
+	</script>
+</body>
+</html>

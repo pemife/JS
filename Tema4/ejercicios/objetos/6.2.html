@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      class Persona (){
+
+        constructor(nombre, edad, genero){
+          this.__nombre = nombre;
+          this.__edad = edad;
+          this.__genero = genero;
+        }
+
+        this.getNombre(){ return this.__nombre; }
+        this.setNombre(nuevoNombre){
+          this.__nombre = nuevoNombre;
+        }
+
+        this.getEdad(){
+          return this.__edad;
+        }
+
+        this.getGenero(){
+          return this.__genero;
+        }
+
+      }
+
+      Persona.prototype.obtDetalles = function() {
+        console.log("Persona: " + this.nombre
+                        + " - " + this.edad
+                        + " - " + this.genero);
+      }
+
+      var p1 = new Persona("Paco", 20, "Masculino");
+      p1.obtDetalles();
+
+      function Estudiante (nombre, edad, genero, curso, grupo){
+        Persona.call(this, nombre, edad, genero);
+        this.curso = curso;
+        this.grupo = grupo;
+      }
+
+      Estudiante.prototype = new Persona();
+      Estudiante.prototype.constructor = Estudiante;
+
+      Estudiante.prototype.registrar = function(){
+        console.log("Alumno: "
+                  + this.nombre + " se ha matriculado en "
+                  + this.curso + " en la clase "
+                  + this.grupo);
+      }
+
+      function Profesor (nombre, edad, genero, asignatura, nivel){
+        Persona.call(this, nombre, edad, genero);
+        this.asignatura = asignatura;
+        this.nivel = nivel;
+      }
+
+      Profesor.prototype = new Persona();
+      Profesor.prototype.constructor = Profesor;
+
+      Profesor.prototype.asignar = function(){
+        console.log("Profesor: "
+                  + this.nombre + " va a impartir "
+                  + this.asignatura);
+      }
+
+      var e1 = new Estudiante("Garci", 123, "Masculino", "2ºDAW", "P7");
+      var e2 = new Estudiante("Castillo", 122, "Masculino", "2ºDAW", "P7");
+
+      var pf1 = new Profesor("Ana", 27, "Femenino", "DWEC", "Alto");
+      var pf2 = new Profesor("Eduardo", 70, "Orco", "DAW", "Bajo");
+
+      e1.registrar();
+      pf2.asignar();
+    </script>
+  </body>
+</html>

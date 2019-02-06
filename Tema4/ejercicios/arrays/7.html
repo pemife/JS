@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 7</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var palabras = [];
+      palabras = prompt("Ingrese palabras: ").split(" ");
+      document.write("Todas las palabras:</br>" + palabras + "</br></br>");
+      palabras.reverse();
+      document.write("Todas las palabras colocadas al revés:</br>" + palabras + "</br></br>");
+      palabras.reverse();
+      document.write("La primera palabra ingresada por el usuario:</br>" + palabras[0] + "</br></br>");
+      document.write("La última palabra ingresada por el usuario:</br>" + palabras[(palabras.length-1)] + "</br></br>");
+      document.write("El número de palabras presentes en el array:</br>" + palabras.length + "</br></br>");
+      document.write("Las palabras ordenadas de la 'a' a la 'z':</br>" + palabras.sort(function(a, b){return a-b}) + "</br></br>");
+      document.write("Las palabras Ordenadas de la 'z' a la 'a':</br>" + palabras.sort(function(a, b){return b-a}) + "</br></br>")
+    </script>
+  </body>
+</html>

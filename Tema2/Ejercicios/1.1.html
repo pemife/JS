@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ejericicio 1</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var number = prompt("Que nota has sacado?");
+      switch (true){
+          case (number > 0 && number < 5):
+              alert("suspenso");
+              break;
+          case (number >= 5 && number < 7):
+              alert("Aprobado");
+              break;
+          case (number >= 7 && number < 9):
+              alert("notable");
+              break;
+          case (number >= 9 && number <=10 ):
+              alert("sobresaliente");
+              break;
+          default:
+              alert("Introduzca una nota válida");
+              break;
+      }
+    </script>
+  </body>
+</html>

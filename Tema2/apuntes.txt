@@ -1,0 +1,27 @@
+defer: cargar script cuando se ha terminado de renderizar la pagina
+ej uso: <script src="xxx.js" defer></script>
+
+async
+
+declaracion de variables:
+cuando declaramos una variable global, no es necesario usar "var"
+pero para variables locales siempre es necesario.
+las variables globales machacan a las variables locales
+ej uso:
+
+mensaje = "mensaje";	(variable global)
+function mostrarMensaje(){
+var mensaje = "mensaje local";
+alert(mensaje);
+}
+alert(mensaje);
+mostrarMensaje();
+alert(mensaje);
+
+resultado: 
+mensaje
+mensaje local
+mensaje
+
+
+

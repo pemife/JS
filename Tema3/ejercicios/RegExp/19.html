@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 19</title>
+</head>
+<body>
+	<script type="text/javascript">
+		hora = prompt("Introduzca una hora (hh:mm:ss):");
+		patronHora = /^([01]\d|2[0-3]):[0-5]\d(:[0-5]\d)?$/
+		while(!patronHora.test(hora)){
+			hora = prompt("Introduzca una hora valida! (hh:mm:ss):");
+		}
+	</script>
+</body>
+</html>

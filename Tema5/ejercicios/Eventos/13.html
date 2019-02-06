@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript">
+            window.onload = function () {
+                var arrRadio = document.getElementsByName("color");
+                for (var variable of arrRadio) {
+                    asignarEventoColor(variable,variable.value);
+                }
+
+                var arrCheckbox = document.getElementsByName("diaSemana");
+                for (variable of arrCheckbox) {
+                    asignarEventoDias(variable, variable.value);
+                }
+            }
+            function asignarEventoColor(elemento, color){
+                elemento.onchange = function (){
+                    document.body.style.backgroundColor = color;
+                }
+            }
+
+            function asignarEventoDias(elemento, unDia){
+                elemento.onchange = function(){
+                    // if(elemento)
+                    // TODO
+                    // selectedIndex
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <div id="div1">
+                <fieldset>
+                    <legend>Datos Personales</legend>
+                    <label for="nombre">Introduce tu nombre:</label>
+                    <input type="text" name="nombre">
+                    <br>
+                    <label for="mensaje">Mensaje:</label><br>
+                    <textarea name="mensaje" rows="4" cols="30"></textarea>
+                </fieldset>
+            </div>
+
+            <br><br>
+
+            <div id="div2">
+                <p>Elige un color:</p>
+                <input type="radio" name="color" value="red">Rojo<br>
+                <input type="radio" name="color" value="green">Verde<br>
+                <input type="radio" name="color" value="blue">Azul<br>
+            </div>
+
+            <br><br>
+
+            <div id="div3">
+                <p>Selecciona una asignatura</p>
+                <select>
+                    <option value="Matematicas" selected>Matematicas</option>
+                    <option value="Lengua">Lengua</option>
+                    <option value="Biologia">Biologia</option>
+                </select>
+            </div>
+
+            <br><br>
+
+            <div id="div4">
+                <label for="diaSemana">Selecciona los dias con disponibilidad:</label><br>
+                <input type="checkbox" name="diaSemana" value="Lunes">Lunes <br>
+                <input type="checkbox" name="diaSemana" value="Martes">Martes <br>
+                <input type="checkbox" name="diaSemana" value="Miercoles">Miercoles <br>
+                <input type="checkbox" name="diaSemana" value="Jueves">Jueves <br>
+                <input type="checkbox" name="diaSemana" value="Viernes">Viernes <br>
+                <input type="checkbox" name="diaSemana" value="Sabado">Sabado <br>
+                <input type="checkbox" name="diaSemana" value="Domingo">Domingo <br>
+                <br>
+                <label for="diaPreferente">Selecciona el dia preferente:<label>
+                <select name="diaPreferente" id="preferente">
+
+                </select>
+            </div>
+
+            <br><br>
+
+            <div id="div5">
+                <input type="submit" name="enviar" value="Enviar Informacion">
+                <input type="reset" name="borrar" value="borrar">
+                <input type="button" name="pagNueva" value="Hazme Click">
+            </div>
+        </form>
+    </body>
+</html>

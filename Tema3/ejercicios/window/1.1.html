@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio Window 1</title>
+  </head>
+  <body>
+    <form>
+      <input type="button" value="Imprimir" onclick="print()">
+      <input type="button" name="abrirVentana" value="Abrir Ventana" onclick="abre()">
+      <input type="button" name="abrirVentStop" value="Abrir Ventana y Detenerla" onclick="abre();aux.stop()">
+      <input type="button" name="cerrarNewVent" value="CerrarVentanaNueva" onclick="aux.close()">
+      <input type="button" name="DarFoco" value="Dar foco ventana nueva" onclick="aux.focus()">
+      <input type="button" name="quitarfoco" value="Quitar foco ventana nueva" onclick="window.focus()">
+      <input type="button" name="scrollTo" value="Scroll To" onclick="window.scrollTo(0,1000)">
+      <input type="button" name="scrollTo" value="Scroll By" onclick="window.scrollBy(0,10)">
+      <input type="button" name="resizeToAux" value="ResizeAux" onclick="aux.resizeTo(1366,768)">
+    </form>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <p>Hola</p>
+    <script type="text/javascript">
+      function abre(){
+        aux=open('1.2.html', 'Auxiliar','width=500, height=500');
+      }
+    </script>
+  </body>
+</html>

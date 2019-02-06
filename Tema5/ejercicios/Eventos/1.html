@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+      window.onload = function(){
+        window.addEventListener('mousedown',muestra);
+      }
+
+      function muestra(evento){
+        var e = evento || window.event;
+        switch(e.button){
+          case 0:
+            console.log("Ha hecho click izquierdo");
+            break;
+          case 1:
+            console.log("Ha hecho click central");
+            break;
+          case 2:
+            console.log("Ha hecho click derecho");
+            break;
+          default:
+            console.log("No conozco ese boton");
+            break;
+        }
+        // switch(e.which){
+        //   case 1:
+        //     console.log("Ha hecho click izquierdo");
+        //     break;
+        //   case 2:
+        //     console.log("Ha hecho click central");
+        //     break;
+        //   case 3:
+        //     console.log("Ha hecho click derecho");
+        //     break;
+        //   default:
+        //     console.log("No conozco ese boton");
+        //     break;
+        // }
+
+        window.addEventListener("keydown", function(event) {console.log("Keydown event: key='" + event.key + "' code='" + event.code)});
+      }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

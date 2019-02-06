@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var numeros = [];
+      for(var i=0; i<10;i++){
+        numeros[i] = Math.trunc(Math.random()*1000);
+      }
+      document.write("Array de numeros: </br>" + numeros + "</br>");
+      document.write("El numero menor:</br>" + Math.min(...numeros) + "</br>");
+      document.write("El numero mayor:</br>" + Math.max(...numeros) + "</br>");
+      var nuevoNumeros = numeros.slice();
+      nuevoNumeros.splice(nuevoNumeros.indexOf(Math.min(...nuevoNumeros)), 1);
+      nuevoNumeros.splice(nuevoNumeros.indexOf(Math.max(...nuevoNumeros)), 1);
+      document.write("Array final:</br>" + nuevoNumeros + "</br>");
+    </script>
+  </body>
+</html>

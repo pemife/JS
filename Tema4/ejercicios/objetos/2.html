@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function Producto_alimentario (codigo_in, nombre_in, precio_in){
+        this.codigo = codigo_in;
+        this.nombre = nombre_in;
+        this.precio = precio_in;
+      }
+
+      Producto_alimentario.prototype.imprimeDatos = function() {
+        for (var i in this) {
+          if (this.hasOwnProperty(i)) {
+            document.write(`${i}: ${this[i]}`);
+          }
+          document.write("<br>");
+        }
+      }
+
+      var producto1 = new Producto_alimentario(1, "manzana", 0.25);
+      var producto2 = new Producto_alimentario(2, "naranja", 0.30);
+      var producto3 = new Producto_alimentario(3, "platano", 0.50);
+
+      var frutas = [producto1, producto2, producto3];
+
+      for (var i = 0; i < frutas.length; i++) {
+        frutas[i].imprimeDatos();
+      }
+
+    </script>
+  </body>
+</html>

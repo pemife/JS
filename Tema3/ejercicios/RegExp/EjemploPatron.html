@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>prueba</title>
+</head>
+<body>
+	<script type="text/javascript">
+		dni = prompt("Introduce tu dni:");
+		var patron = /^\d{8}[A-Z]$/;
+		while(!patron.test(dni)){
+			dni = prompt("Introduce un DNI valido!");
+		}
+	</script>
+</body>
+</html>

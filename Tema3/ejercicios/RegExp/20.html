@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 20</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// No pueden aparecer ñ,q o vocales
+		matricula = prompt("Introduce una matricula");
+		patronMatricula = /^\d{4} ([B-D]|[F-H]|[J-N]|P|[R-T]|[V-Z]){3}$/
+		while(!patronMatricula.test(matricula)){
+			prompt("Introduce una matricula valida!");
+		}
+	</script>
+</body>
+</html>

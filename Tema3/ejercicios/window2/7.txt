@@ -1,0 +1,40 @@
+1.- �El m�todo window.open() necesita argumentos
+para poder abrir una nueva ventana?
+b) Falso
+
+2.- �Qu� propiedades se deben establecer para
+controlar el tama�o de una ventana?
+c) width y height
+
+3.- El n�mero devuelto al utilizar el m�todo
+getTime() del objeto Date corresponde a :
+c) Milisegundos
+
+4.- Se puede obtener el valor de la constante Pi
+mediante:
+c) Math.PI
+
+5.- Se puede crea una ventana que no contenga las
+barras de desplazamiento si se establece:
+c) scrollbar = '0'
+
+6.- �Qu� m�todo del objeto Window sirve para
+solicita un valor al usuario?
+b) prompt()
+
+7.- �C�mo se puede ocultar el borde de un marco?
+d) frameborder = '0'
+
+8.- �C�mo se define el n�mero de marcos presente
+en un conjunto de marcos?
+X b) Con el valor de frameset
+  d) Con el valor de cols //Corregido
+
+9.- �C�mo se cierra una ventana primaria desde una
+ventana secundaria?
+b) No se puede cerrar una ventana primaria
+desde una secundaria
+
+10.- �La comunicaci�n entre ventanas es un proceso
+completamente bidireccional?
+b) Falso

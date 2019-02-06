@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 16</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var frase = prompt("Escriba una frase pls:");
+		var palabra = prompt("Escriba una palabra a buscar:");
+		var donde = frase.indexOf(palabra);
+		if (donde!=-1){
+			document.write(`La palabra "${palabra}" esta contenida en la frase "${frase}"`);
+			document.write(`<br>Esta contenida a partir de ${donde}`);
+			document.write(`<br>Palabra caracteres:${palabra.length}`);
+			document.write(`<br>${frase.replace(palabra, "dwecl")}`);
+		}else{
+			document.write(`NO esta la palabra :(`);
+		}
+	</script>
+</body>
+</html>
